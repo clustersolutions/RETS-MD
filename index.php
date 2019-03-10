@@ -322,10 +322,10 @@ function code_peek() {
 
 	$field_list = $rets->SearchGetFields($search);
 	$rets->FreeResult($search);
-	
+
 	$system_to_long = array();
 	$table_metadata = $rets->GetMetadataTable($_REQUEST['r_resource'], $_REQUEST['r_class']);
-	
+
 	foreach ($table_metadata as $fi) {
 		$system_to_long["{$fi['SystemName']}"] = $fi['LongName'];
 	}
@@ -359,7 +359,7 @@ function code_peek() {
 	echo "</tr>\n";
 
 	echo "</table>\n";
-	
+
 	$rets->Disconnect();
 
 echo "
@@ -959,13 +959,13 @@ if (isset($_REQUEST['load']) && $_REQUEST['load'] == "demo") {
 }
 else {
 	$user_agent = "RETSMD/1.0";
-	$rets_version = "1.5";
+	$rets_version = "1.8";
 	$username = $_REQUEST['username'];
 	$password = $_REQUEST['password'];
 	$login_url = $_REQUEST['login_url'];
 }
 
-$possible_versions = array("1.0","1.5","1.7","1.7.2");
+$possible_versions = array("1.0","1.5","1.7","1.7.2","1.8");
 $version_options = "";
 foreach ($possible_versions as $version) {
 	if ($version == $rets_version) {
